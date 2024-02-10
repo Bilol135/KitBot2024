@@ -14,8 +14,8 @@ public class DefaultDrive extends CommandBase{
 
     @Override
     public void execute(){
-        driveTrain.drive(RobotContainer.joystick.getY() * Robot.joystick.getThrottle(), 
-                    RobotContainer.joystick.getTwist() * Robot.joystick.getThrottle());
+        driveTrain.drive(RobotContainer.joystick.getY() * RobotContainer.joystick.getThrottle(), 
+                    RobotContainer.joystick.getTwist() * RobotContainer.joystick.getThrottle());
     }
 
     @Override
