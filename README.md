@@ -6,6 +6,6 @@
 
 # Kitbot 2024 code from Team 7587
 ### Motor Drive Controllers used:
-- **2 x TalonSPX** - *for shooter intake and launcher*
+- **2 x TalonSRX** - *for shooter intake and launcher*
 - **4 x VictorSPX** - *for Tank Drivetrain* 
 
