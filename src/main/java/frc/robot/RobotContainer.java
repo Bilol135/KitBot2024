@@ -26,8 +26,8 @@ public class RobotContainer {
     private final DriveTrain m_drive = new DriveTrain();
     private final Launcher m_launcher = new Launcher();
 
-    public static final Joystick joystick = new Joystick(0);
-    public static final CommandXboxController gamePad = new CommandXboxController(1);
+    public static final Joystick joystick = new Joystick(1);
+    public static final CommandXboxController gamePad = new CommandXboxController(gamePadPort);
     
 
     public RobotContainer() {

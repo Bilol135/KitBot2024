@@ -17,7 +17,7 @@ public final class Constants {
         public static final int joystickPort = 0;
 
         //gamePad constants
-        public static final int gamePadPort = 1;
+        public static final int gamePadPort = 0;
         public static final int buttonA = 1;
         public static final int buttonB = 2;
         public static final int buttonX = 3;
