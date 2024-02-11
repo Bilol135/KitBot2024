@@ -41,6 +41,7 @@ public class RobotContainer {
 
         gamePad.a().whileTrue(new PrepareLaunch(m_launcher));
         gamePad.leftBumper().whileTrue(new IntakeNote(m_launcher));
+        gamePad.rightBumper().whileTrue(new LaunchNote(m_launcher));
         
         
     }
