@@ -4,6 +4,7 @@ import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 
 
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+import edu.wpi.first.wpilibj.motorcontrol.MotorController;
 import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
@@ -23,14 +24,14 @@ public class DriveTrain extends SubsystemBase {
 
         leftMotors = new MotorControllerGroup(leftFront, leftBack);
         rightMotors = new MotorControllerGroup(rightFront, rightBack);
-
-        driveTrain = new DifferentialDrive(leftMotors, rightMotors);
         leftMotors.setInverted(true);
 
         leftFront.configFactoryDefault();
         leftBack.configFactoryDefault();
         rightFront.configFactoryDefault();
         rightBack.configFactoryDefault();
+        driveTrain = new DifferentialDrive(leftMotors,rightMotors);
+
     }
     
     public void drive(double velocity, double rotation){

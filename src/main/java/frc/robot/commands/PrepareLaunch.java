@@ -1,11 +1,11 @@
 package frc.robot.commands;
 
 import frc.robot.Robot;
-import edu.wpi.first.wpilibj2.command.CommandBase;
+import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.Launcher;
 import static frc.robot.Constants.LauncherConstants.*;
 
-public class PrepareLaunch extends CommandBase {
+public class PrepareLaunch extends Command {
     Launcher m_launcher;
 
     public PrepareLaunch(Launcher launcher){
@@ -16,7 +16,7 @@ public class PrepareLaunch extends CommandBase {
 
     public void initialize() {
         m_launcher.setLaunchWheel(kLauncherSpeed);
-        m_launcher.setFeedWheel(kLauncherSpeed);
+        //m_launcher.setFeedWheel(kLauncherSpeed);
     }
 
     public void execute() {

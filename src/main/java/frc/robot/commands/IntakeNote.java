@@ -4,10 +4,10 @@ import static frc.robot.Constants.LauncherConstants.kIntakeFeederSpeed;
 import static frc.robot.Constants.LauncherConstants.kIntakeLauncherSpeed;
 import static frc.robot.Constants.LauncherConstants.kLaunchFeederSpeed;
 
-import edu.wpi.first.wpilibj2.command.CommandBase;
+import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.Launcher;
 
-public class IntakeNote extends CommandBase {
+public class IntakeNote extends Command {
     Launcher m_launcher;
 
     public IntakeNote(Launcher launcher){

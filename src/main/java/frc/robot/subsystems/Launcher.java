@@ -5,6 +5,7 @@ import com.ctre.phoenix.motorcontrol.TalonSRXControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
 import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
+import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import static frc.robot.Constants.LauncherConstants.*;
 
@@ -20,10 +21,21 @@ public class Launcher extends SubsystemBase{
         m_launchWheel.configFactoryDefault();
         m_feedWheel.configFactoryDefault();
 
-        m_launchWheel.configSupplyCurrentLimit(new SupplyCurrentLimitConfiguration(true, 80, 30, 0.1));
-        m_feedWheel.configSupplyCurrentLimit(new SupplyCurrentLimitConfiguration(true, 80, 30, 0.1));
+        //m_launchWheel.configSupplyCurrentLimit(new SupplyCurrentLimitConfiguration(true, 80, 30, 0.1));
+        //m_feedWheel.configSupplyCurrentLimit(new SupplyCurrentLimitConfiguration(true, 80, 30, 0.1));
         m_launchWheel.configPeakCurrentLimit(kLauncherCurrentLimit);
         m_feedWheel.configPeakCurrentLimit(kFeedCurrentLimit);
+    }
+
+    public Command getIntakeCommand(){
+        return this.startEnd(
+            () -> {
+                setFeedWheel(kIntakeFeederSpeed);
+                setLaunchWheel(kIntakeLauncherSpeed);
+            },
+            () -> {
+                stop();
+            });
     }
 
     public void setLaunchWheel(double speed) {
